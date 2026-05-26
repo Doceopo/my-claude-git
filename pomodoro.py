@@ -5,46 +5,7 @@ import threading
 import winsound
 
 class PomodoroApp:
-    def __init__(self, root):
-        self.root = root
-        self.root.title("番茄钟")
-        self.root.geometry("350x450")
-        self.root.resizable(False, False)
-        self.root.configure(bg="#2c3e50")
-
-        # 配置时间（分钟）
-        self.work_time = 25
-        self.short_break = 5
-        self.long_break = 15
-        self.cycles_before_long_break = 4
-
-        # 状态
-        self.time_left = self.work_time * 60
-        self.running = False
-        self.current_mode = "work"  # work, short_break, long_break
-        self.cycle_count = 0
-        self.timer_thread = None
-
-        self.setup_ui()
-        self.update_display()
-
-    def setup_ui(self):
-        # 标题
-        title = tk.Label(
-            self.root,
-            text="番茄钟",
-            font=("Microsoft YaHei", 24, "bold"),
-            bg="#2c3e50",
-            fg="#ecf0f1"
-        )
-        title.pack(pady=20)
-
-        # 模式标签
-        self.mode_label = tk.Label(
-            self.root,
-            text="专注时间",
-            font=("Microsoft YaHei", 14),
-            bg="#2c3e50",
+ 
             fg="#3498db"
         )
         self.mode_label.pack(pady=10)
